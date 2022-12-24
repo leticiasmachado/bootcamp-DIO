@@ -2,44 +2,11 @@ package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
 
-public class Mentoria {
-    private String titulo;
-    private String descricao;
-    private Integer cargaHoraria;
+public class Mentoria extends Conteudo {
+
     private LocalDate data;
 
     public Mentoria() {
-    }
-
-    public Mentoria(String titulo, String descricao, Integer cargaHoraria, LocalDate data) {
-        this.titulo = titulo;
-        this.descricao = descricao;
-        this.cargaHoraria = cargaHoraria;
-        this.data = data;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public Integer getCargaHoraria() {
-        return cargaHoraria;
-    }
-
-    public void setCargaHoraria(Integer cargaHoraria) {
-        this.cargaHoraria = cargaHoraria;
     }
 
     public LocalDate getData() {
@@ -51,9 +18,13 @@ public class Mentoria {
     }
 
     @Override
-    public String toString() {
-        return "Mentoria{" + "titulo=" + titulo + ", descricao=" + descricao + ", cargaHoraria=" + cargaHoraria + ", data=" + data + '}';
+    public double calcularXP() {
+        return XP_PADRAO + 20d;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Curso{" + "titulo=" + getTitulo() + ", descricao=" + getDescricao() + ", data=" + data + '}';
+    }
+
 }
